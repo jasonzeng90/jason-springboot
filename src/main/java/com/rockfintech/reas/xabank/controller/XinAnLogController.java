@@ -4,10 +4,7 @@ import com.rockfintech.reas.xabank.common.res.ComResponse;
 import com.rockfintech.reas.xabank.entity.XaLog;
 import com.rockfintech.reas.xabank.service.IXaLogService;
 import com.rockfintech.reas.xabank.vo.req.XaReqTestVo;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("xalog/")
+@Api(value = "新安通讯", description = "新安通讯")
 public class XinAnLogController extends BaseController{
 
     @Autowired
