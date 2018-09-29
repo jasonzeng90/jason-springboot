@@ -2,7 +2,7 @@ package com.rockfintech.reas.xabank.common.constant;
 
 public class MIMEType {
     public static final String FORM = "application/x-www-form-urlencoded";
-    public static final String JSON = "application/json";
+    public static final String JSON = "application/jason";
     public static final String XML = "application/xml";
     public static final String PDF = "application/pdf";
     public static final String HTML = "text/html";

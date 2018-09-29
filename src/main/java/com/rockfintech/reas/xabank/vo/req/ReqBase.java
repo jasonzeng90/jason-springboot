@@ -3,11 +3,11 @@ package com.rockfintech.reas.xabank.vo.req;
 import com.rockfintech.reas.xabank.checker.NotNull;
 
 
-public class BaseReqVo  {
+public class ReqBase {
 
-    @NotNull
+
     private String channelId;
-    @NotNull
+
     private String firstChannelId;
 
     public String getChannelId() {

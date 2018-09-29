@@ -1,4 +1,4 @@
-package test.simple;
+package com.jason.simple;
 
 /**
  * @Auther: zengsheng

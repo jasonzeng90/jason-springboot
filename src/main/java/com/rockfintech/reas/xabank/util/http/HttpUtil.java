@@ -125,13 +125,13 @@ public class HttpUtil {
         CloseableHttpClient client = HttpClients.createDefault();
 
         HttpPost httpPost = new HttpPost(url);
-        httpPost.setHeader("Content-Type", "application/json;charset=UTF-8");
+        httpPost.setHeader("Content-Type", "application/jason;charset=UTF-8");
 
 
         String parameter = JSONUtils.toJSONString(param);
 
         StringEntity se = new StringEntity(parameter);
-        se.setContentType("text/json");
+        se.setContentType("text/jason");
         httpPost.setEntity(se);
 
         CloseableHttpResponse response = client.execute(httpPost);

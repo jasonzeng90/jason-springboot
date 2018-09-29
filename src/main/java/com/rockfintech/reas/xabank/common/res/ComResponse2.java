@@ -2,22 +2,22 @@ package com.rockfintech.reas.xabank.common.res;
 
 import java.io.Serializable;
 
-public class ComResponse<T> implements Serializable {
+public class ComResponse2 implements Serializable {
 
 	private static final long serialVersionUID = 3139953403088817455L;
 
 	/**
 	 * 返回代码
 	 */
-	private static String code = "000000";// 默认失败
+	private String code = CODE_SUCCESS;// 默认失败
 	/**
 	 * 提示信息
 	 */
-	private static String msg = "操作失败"; // 默认操作失败
+	private String msg = "操作失败"; // 默认操作失败
 	/**
 	 * 返回信息
 	 */
-	private static Object data = null;
+	private Object data = null;
 
 	public static String CODE_SUCCESS = "000000";
 	public static String CODE_AX_SUC = "60000000";
@@ -29,24 +29,24 @@ public class ComResponse<T> implements Serializable {
 	public static String CODE_PUB_KEY_ERROR = "403";//签名错误或者公钥错误
 
 
-	public ComResponse(String code) {
+	public ComResponse2(String code) {
 		this.code = code;
 	}
 
-	public ComResponse() {
+	public ComResponse2() {
 	}
 
-	public ComResponse(ComResponse serviceResult) {
+	public ComResponse2(ComResponse2 serviceResult) {
 		this.code = serviceResult.getCode();
 		this.msg = serviceResult.getMsg();
 	}
 
-	public ComResponse(String code, String msg) {
+	public ComResponse2(String code, String msg) {
 		this.code = code;
 		this.msg = msg;
 	}
 
-	public ComResponse(String code, String msg, Object ext) {
+	public ComResponse2(String code, String msg, Object ext) {
 		this.code = code;
 		this.msg = msg;
 		this.data = ext;
