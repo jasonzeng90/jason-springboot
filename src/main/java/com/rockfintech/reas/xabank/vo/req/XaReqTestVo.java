@@ -12,7 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @Copyright:Copyright(c)2018) Version:1.0.1
  */
 
-@ApiModel(value="XaReqTestVo对象",description="新安通讯查询日志请求实体")
+//@ApiModel(value="XaReqTestVo对象",description="新安通讯查询日志请求实体")
 public class XaReqTestVo extends ReqBase {
 
     @NotNull

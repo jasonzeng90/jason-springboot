@@ -1,7 +1,10 @@
 package com.rockfintech.reas.xabank.common.res;
 
-import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
+import java.io.Serializable;
+@ApiModel
 public class ComResponse<T> implements Serializable {
 
 	private static final long serialVersionUID = 3139953403088817455L;
@@ -9,15 +12,18 @@ public class ComResponse<T> implements Serializable {
 	/**
 	 * 返回代码
 	 */
-	private static String code = "000000";// 默认失败
+	@ApiModelProperty(value = "响应码（000000-成功）")
+	private  String code = "000000";// 默认失败
 	/**
 	 * 提示信息
 	 */
-	private static String msg = "操作失败"; // 默认操作失败
+	@ApiModelProperty(value = "描述")
+	private  String msg = "操作成功"; // 默认操作失败
 	/**
 	 * 返回信息
 	 */
-	private static Object data = null;
+	@ApiModelProperty(value = "响应信息")
+	private  T data = null;
 
 	public static String CODE_SUCCESS = "000000";
 	public static String CODE_AX_SUC = "60000000";
@@ -46,7 +52,7 @@ public class ComResponse<T> implements Serializable {
 		this.msg = msg;
 	}
 
-	public ComResponse(String code, String msg, Object ext) {
+	public ComResponse(String code, String msg, T ext) {
 		this.code = code;
 		this.msg = msg;
 		this.data = ext;
@@ -68,11 +74,11 @@ public class ComResponse<T> implements Serializable {
 		this.msg = msg;
 	}
 
-	public Object getData() {
+	public T getData() {
 		return data;
 	}
 
-	public void setData(Object data) {
+	public void setData(T data) {
 		this.data = data;
 	}
 

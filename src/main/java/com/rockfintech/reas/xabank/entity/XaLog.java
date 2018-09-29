@@ -1,5 +1,7 @@
 package com.rockfintech.reas.xabank.entity;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
@@ -12,6 +14,7 @@ public class XaLog implements Serializable {
     @Column(name = "CHID")
     private String chid;
 
+    @ApiModelProperty("账号")
     @Column(name = "ACCT_NO")
     private String acctNo;
 
