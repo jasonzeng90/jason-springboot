@@ -5,8 +5,11 @@ import com.rockfintech.reas.springboot.entity.XaLog;
 import com.rockfintech.reas.springboot.service.IXaLogService;
 import com.rockfintech.reas.springboot.vo.req.XaReqTestVo;
 import io.swagger.annotations.*;
+import org.apache.logging.log4j.core.util.UuidUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 /**
  * @Auther: zengsheng
@@ -41,6 +44,18 @@ public class XinAnLogController extends BaseController{
         XaLog xaLog = xaLogService.selectByPrimaryKey(vo.getXaLogId());
         comResponse.setMsg("查询成功");
         comResponse.setData(xaLog);
+
+        return comResponse;
+    }
+
+    @PostMapping("addXalog")
+    public ComResponse<XaReqTestVo> addXinAnLog(XaReqTestVo vo) throws Exception{
+        ComResponse<XaReqTestVo> comResponse = new ComResponse();
+        XaLog xaLog = new XaLog();
+        xaLog.setXalogId(UUID.randomUUID().toString().replaceAll("-",""));
+        xaLogService.insertParams(xaLog);
+        comResponse.setMsg("操作成功");
+        comResponse.setData(vo);
 
         return comResponse;
     }
